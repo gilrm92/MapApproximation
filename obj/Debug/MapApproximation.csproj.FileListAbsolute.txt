@@ -4,3 +4,9 @@ C:\Users\Gilberto\Desktop\crowleys area\checkers\admin\MapApproximation\MapAppro
 C:\Users\Gilberto\Desktop\crowleys area\checkers\admin\MapApproximation\MapApproximation\obj\Debug\MapApproximation.dll
 C:\Users\Gilberto\Desktop\crowleys area\checkers\admin\MapApproximation\MapApproximation\obj\Debug\MapApproximation.pdb
 C:\Users\Gilberto\Desktop\crowleys area\checkers\admin\MapApproximation\MapApproximation\obj\Debug\MapApproximation.csprojResolveAssemblyReference.cache
+E:\projects\MapApproximation\MapApproximation\bin\MapApproximation.dll.config
+E:\projects\MapApproximation\MapApproximation\bin\MapApproximation.dll
+E:\projects\MapApproximation\MapApproximation\bin\MapApproximation.pdb
+E:\projects\MapApproximation\MapApproximation\obj\Debug\MapApproximation.csprojResolveAssemblyReference.cache
+E:\projects\MapApproximation\MapApproximation\obj\Debug\MapApproximation.dll
+E:\projects\MapApproximation\MapApproximation\obj\Debug\MapApproximation.pdb

@@ -7,9 +7,11 @@ var latParent;
 var lngParent;
 
 var markers = [];
+var infoWindow;
 
 $(document).ready(function () {
     initialize(-22.9103552, -43.7285337);
+    setInterval(function () { getActualPosition(); }, 5000);
 })
 
 function initialize(lat, lon) {
@@ -79,23 +81,29 @@ function removeMarkerFromMap(marker)
     marker.setMap(null);
 }
 
-function checkApproximation()
-{
-    var distance = google.maps.geometry.spherical.computeDistanceBetween(markers[0].getPosition(), markers[1].getPosition());
-    if (distance > 2000) {
-        alert('The parent is not close to the school. When he reaches less than 2km it will be considered "near"');
+function removeInfoWindowFromMap() {
+    if (infoWindow != null) {
+        infoWindow.setMap(null);
     }
-    else
-    {
-        alert('THE PARENT IS FUCKIN NEAR! PREPARE HIS FUCKIN CHILD!!');
-    }
+}
 
-    $('#distance').val(distance);
+function checkApproximation() {
+    if (markers.length > 0 && infoWindow != null) {
+        var distance = google.maps.geometry.spherical.computeDistanceBetween(markers[0].getPosition(), infoWindow.getPosition());
+        if (distance > 2000) {
+            $('#infoAboutDistance').text('The parent is ' + parseInt(distance) + ' meters of distance from the school');
+        }
+        else {
+            $('#infoAboutDistance').text('ALERT! The parent is ' + parseInt(distance) + ' meters of distance from the school! Prepare the child.');
+        }
+    }
 }
 
 function getActualPosition()
 {
-    var infoWindow = new google.maps.InfoWindow({ map: map });
+    removeInfoWindowFromMap();
+
+    infoWindow = new google.maps.InfoWindow({ map: map });
 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
@@ -105,8 +113,10 @@ function getActualPosition()
             };
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
+            infoWindow.setContent('[Parent] You are here!');
             map.setCenter(pos);
+
+            checkApproximation();
         }, function () {
             handleLocationError(true, infoWindow, map.getCenter());
         });
