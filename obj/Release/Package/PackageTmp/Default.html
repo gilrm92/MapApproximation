@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Map Approximation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:600" type="text/css" rel="stylesheet" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACqByiIf7NpenwcSZz1g7xs_ijKQHW210&libraries=geometry"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+           * element that contains the map. */
+        #mapa {
+            height: 100%;
+            width:70%;
+            float:left;
+        }
+        #texts {
+            float:right;
+            height:100%;
+            width:30%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="mapa"></div>
+    <div id="texts">
+        <br />
+        <br />
+        latitude: <input type="text" id="lat" />
+        <br />
+        longitude: <input type="text" id="lon" />
+
+        <br />
+        <br />
+        <input type="button" value="Set as school" onclick="setSchool()"/>
+        <br />
+        <input type="button" value="Set as parent" onclick="setParent()" />
+        <br />
+        <input type="button" value="Check if it's near" onclick="checkApproximation()" /> 
+        <br /> <input type="text" id="distance" placeholder="distance"/> <h5>*in meters.</h5>
+
+    </div>
+</body>
+</html>
