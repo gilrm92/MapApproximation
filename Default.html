@@ -36,23 +36,32 @@
     <div id="texts">
         <br />
         <br />
-        latitude: <input type="text" id="lat" />
+        <!--latitude: <input type="text" id="lat" />
         <br />
         longitude: <input type="text" id="lon" />
 
         <br />
         <br />
         <input type="button" value="Set as school" onclick="setSchool()"/>
-        <br />
+        <br />-->
         <!--<input type="button" value="Set as parent" onclick="setParent()" />-->
-        <br />
+        <!--<br />-->
         <!--<input type="button" value="Check if it's near" onclick="checkApproximation()" />--> 
         <!--<br /> <input type="text" id="distance" placeholder="distance"/> <h5>*in meters.</h5>-->
 
 
-        <br /><br />
+        <!--<br /><br />
         Info for school:
+        <span id="infoAboutDistance"></span>-->
+
+
+        Selecione a escola: <select id="schools"></select>
+        <br />
+        <input type="button" value="Selecionar escola" onclick="chooseSchool();"/>
+        <br />
         <span id="infoAboutDistance"></span>
+        <br />
+        <span id="infoAboutTime"></span>
     </div>
 </body>
 </html>
