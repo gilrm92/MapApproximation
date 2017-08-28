@@ -214,11 +214,13 @@ function callback(response, status) {
                     var duration = element.duration.text;
                     $('#infoAboutDistance').text('Você está a ' + distance + ' de distancia da escola.');
                     $('#infoAboutTime').text('Você levará ' + duration + ' até chegar lá.');
+                    $('#externalMap').attr('href', 'http://maps.google.com/maps?saddr=' + origins[0] + '&daddr= ' + destinations[0]);
                 }
                 else
                 {
                     $('#infoAboutDistance').text('Não foi possivel encontrar rotas para esse endereço.');
                     $('#infoAboutTime').text('');
+                    $('#externalMap').attr('href', '#');
                 }
             }
         }
